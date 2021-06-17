@@ -1,9 +1,9 @@
-import "package:chess/chess.dart";
+import 'package:chessjs/chessjs.dart';
 
 void main() {
-  Chess chess = new Chess();
+  Chess chess = Chess();
   print(chess.ascii);
-  while (!chess.game_over) {
+  while (!chess.gameOver) {
     print('position: ' + chess.fen);
     print(chess.ascii);
     var moves = chess.moves();
@@ -12,18 +12,18 @@ void main() {
     chess.move(move);
     print('move: ' + move);
   }
-  
+
   print(chess.ascii);
-  if (chess.in_checkmate) {
+  if (chess.inCheckmate) {
     print("Checkmate");
   }
-  if (chess.in_stalemate) {
+  if (chess.inStalemate) {
     print("Stalemate");
   }
-  if (chess.in_draw) {
+  if (chess.inDraw) {
     print("Draw");
   }
-  if (chess.insufficient_material) {
+  if (chess.insufficientMaterial) {
     print("Insufficient Material");
   }
 }
